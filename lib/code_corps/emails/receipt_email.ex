@@ -1,6 +1,5 @@
 defmodule CodeCorps.Emails.ReceiptEmail do
-  import Bamboo.Email
-  import Bamboo.PostmarkHelper
+  import Bamboo.{Email, PostmarkHelper}
 
   alias CodeCorps.Emails.BaseEmail
   alias CodeCorps.{DonationGoal, Project, Repo, StripeConnectCharge, StripeConnectSubscription}

@@ -1,5 +1,5 @@
 defmodule CodeCorps.StripeTesting.Event do
-  def retrieve(id, _opts = [connect_account: _]) do
+  def retrieve(id, [connect_account: _] = _opts) do
     {:ok, do_retrieve_connect(id)}
   end
   def retrieve(id) do

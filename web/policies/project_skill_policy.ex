@@ -2,8 +2,7 @@ defmodule CodeCorps.ProjectSkillPolicy do
   import CodeCorps.Helpers.Policy,
     only: [get_project: 1, get_membership: 2, get_role: 1, admin_or_higher?: 1]
 
-  alias CodeCorps.ProjectSkill
-  alias CodeCorps.User
+  alias CodeCorps.{ProjectSkill, User}
   alias Ecto.Changeset
 
   def create?(%User{admin: true}, %Changeset{}), do: true

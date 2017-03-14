@@ -7,8 +7,8 @@ defmodule CodeCorps.AuthenticationHelpers do
 
   alias JaSerializer.Params
 
-  def handle_unauthorized(conn = %{assigns: %{authorized: true}}), do: conn
-  def handle_unauthorized(conn = %{assigns: %{authorized: false}}) do
+  def handle_unauthorized(%{assigns: %{authorized: true}} = conn), do: conn
+  def handle_unauthorized(%{assigns: %{authorized: false}} = conn) do
     conn
     |> put_status(403)
     |> render(CodeCorps.TokenView, "403.json", message: "You are not authorized to perform this action.")

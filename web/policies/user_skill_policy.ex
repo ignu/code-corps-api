@@ -1,6 +1,5 @@
 defmodule CodeCorps.UserSkillPolicy do
-  alias CodeCorps.UserSkill
-  alias CodeCorps.User
+  alias CodeCorps.{User, UserSkill}
   alias Ecto.Changeset
 
   def create?(%User{admin: true}, %Changeset{}), do: true

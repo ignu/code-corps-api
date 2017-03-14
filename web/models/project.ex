@@ -5,8 +5,7 @@ defmodule CodeCorps.Project do
 
   use CodeCorps.Web, :model
 
-  import CodeCorps.Helpers.RandomIconColor
-  import CodeCorps.Helpers.Slug
+  import CodeCorps.Helpers.{RandomIconColor, Slug}
   import CodeCorps.Validators.SlugValidator
 
   alias CodeCorps.Services.MarkdownRendererService

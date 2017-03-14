@@ -1,6 +1,5 @@
 defmodule CodeCorps.StripePlatformCustomerPolicy do
-  alias CodeCorps.StripePlatformCustomer
-  alias CodeCorps.User
+  alias CodeCorps.{User, StripePlatformCustomer}
   alias Ecto.Changeset
 
   def create?(%User{id: current_user_id}, %Changeset{changes: %{user_id: user_id}}), do: current_user_id == user_id

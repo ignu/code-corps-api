@@ -2,8 +2,7 @@ defmodule CodeCorps.DonationGoalPolicy do
 
   import CodeCorps.Helpers.Policy, only: [get_project: 1, get_membership: 2, get_role: 1, owner?: 1]
 
-  alias CodeCorps.DonationGoal
-  alias CodeCorps.User
+  alias CodeCorps.{User, DonationGoal}
   alias Ecto.Changeset
 
   def create?(%User{admin: true}, %Changeset{}), do: true

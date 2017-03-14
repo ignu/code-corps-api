@@ -85,7 +85,7 @@ defmodule CodeCorps.Services.UserService do
 
   defp update_connect_customers(%{update_platform_customer: nil}), do: {:ok, nil}
 
-  defp update_connect_customers(%{update_platform_customer: %StripePlatformCustomer{email: email} = stripe_platform_customer }) do
+  defp update_connect_customers(%{update_platform_customer: %StripePlatformCustomer{email: email} = stripe_platform_customer}) do
     case do_update_connect_customers(stripe_platform_customer, %{email: email}) do
       [_h | _t] = results -> {:ok, results}
       [] -> {:ok, nil}

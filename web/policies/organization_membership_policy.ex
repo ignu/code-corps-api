@@ -4,10 +4,7 @@ defmodule CodeCorps.OrganizationMembershipPolicy do
   """
   import CodeCorps.Helpers.Policy, only: [get_membership: 2, get_role: 1]
 
-  alias CodeCorps.Organization
-  alias CodeCorps.OrganizationMembership
-  alias CodeCorps.Repo
-  alias CodeCorps.User
+  alias CodeCorps.{Organization, OrganizationMembership, Repo, User}
   alias Ecto.Changeset
 
   @spec create?(User.t, Ecto.Changeset.t) :: boolean

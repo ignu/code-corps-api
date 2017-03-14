@@ -1,6 +1,5 @@
 defmodule CodeCorps.CommentPolicy do
-  alias CodeCorps.Comment
-  alias CodeCorps.User
+  alias CodeCorps.{Comment, User}
   alias Ecto.Changeset
 
   def create?(%User{} = user, %Changeset{changes: %{user_id: creator_id}}), do: user.id == creator_id

@@ -8,7 +8,7 @@ defmodule CodeCorps.StripeTesting.Customer do
   end
 
   def retrieve(id) do
-    {:ok, do_retrieve(id) }
+    {:ok, do_retrieve(id)}
   end
 
   defp do_create(_) do

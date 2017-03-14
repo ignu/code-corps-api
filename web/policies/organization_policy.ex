@@ -2,8 +2,7 @@ defmodule CodeCorps.OrganizationPolicy do
   import CodeCorps.Helpers.Policy,
     only: [organization_owned_by?: 2]
 
-  alias CodeCorps.User
-  alias CodeCorps.Organization
+  alias CodeCorps.{User, Organization}
 
   def create?(%User{admin: true}), do: true
   def create?(%User{admin: false}), do: false

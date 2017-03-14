@@ -1,6 +1,5 @@
 defmodule CodeCorps.StripeConnectSubscriptionPolicy do
-  alias CodeCorps.StripeConnectSubscription
-  alias CodeCorps.User
+  alias CodeCorps.{User, StripeConnectSubscription}
   alias Ecto.Changeset
 
   def create?(user, subscription), do: user |> owns?(subscription)

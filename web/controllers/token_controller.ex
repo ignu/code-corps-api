@@ -1,11 +1,9 @@
 defmodule CodeCorps.TokenController do
   use CodeCorps.Web, :controller
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
-  alias CodeCorps.GuardianSerializer
-  alias CodeCorps.Repo
-  alias CodeCorps.User
+  alias CodeCorps.{GuardianSerializer, Repo, User}
 
-  def create(conn, params = %{"username" => _, "password" => _}) do
+  def create(conn, %{"username" => _, "password" => _} = params) do
     case login_by_email_and_pass(params) do
       {:ok, user} ->
         {:ok, token, _claims} = user |> Guardian.encode_and_sign(:token)

@@ -2,8 +2,7 @@ defmodule CodeCorps.StripeConnectAccountController do
   use CodeCorps.Web, :controller
   use JaResource
 
-  alias CodeCorps.ConnUtils
-  alias CodeCorps.StripeConnectAccount
+  alias CodeCorps.{ConnUtils, StripeConnectAccount}
   alias CodeCorps.StripeService.StripeConnectAccountService
 
   plug :load_and_authorize_changeset, model: StripeConnectAccount, only: [:create]

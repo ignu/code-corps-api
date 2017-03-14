@@ -2,8 +2,7 @@ defmodule CodeCorps.ProjectPolicy do
   import CodeCorps.Helpers.Policy,
     only: [get_membership: 2, get_role: 1, admin_or_higher?: 1]
 
-  alias CodeCorps.Project
-  alias CodeCorps.User
+  alias CodeCorps.{User, Project}
   alias Ecto.Changeset
 
   # TODO: ProjectPolicy needs testing for the case of user being at least admin
