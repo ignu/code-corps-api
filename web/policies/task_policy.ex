@@ -8,12 +8,8 @@ defmodule CodeCorps.TaskPolicy do
 
   def create?(%User{admin: true}, %Changeset{}), do: true
   def create?(%User{} = user, %Changeset{changes: %{user_id: author_id}}) do
-    cond do
-      # can't create for some other user
-      user.id != author_id -> false
-      # permit any user to create
-      true -> true
-    end
+    # non admins can only create tasks for themself.
+    user.id == author_id
   end
   def create?(%User{}, %Changeset{}), do: false
 
